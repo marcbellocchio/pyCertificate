@@ -15,11 +15,13 @@ import logging
 
 class FoundOne(Exception): pass
 """
-foundone is an object to use in exception to exit from nested loop
+foundone is an object to use in exception to exit from a nested loop
 """
+
+
 class OpensslTracking(object):
     '''
-    keep trace of user actions during generation
+    keep trace of user actions during generation of certificates
     '''
     session = "undefined" 
     def __init__(self):
@@ -27,18 +29,20 @@ class OpensslTracking(object):
         Constructor
         '''
         #self.session = "undefined"
-        self.objecttype             = [ 'root', 'brand', 'device']
+        self.objecttype             = [ 'Root', 'Intermediate', 'Device']
         self.cache                  = []
         self.file                   = "none"  
         
         logging.basicConfig(level=logging.INFO,
                         filename=OpensslConfig.logfile, filemode='a',
-                        format='%(name)-20s %(levelname)-10s %(message)s')
+                        format='%(name)-28s %(levelname)-10s %(message)s')
           
     def GetLogger(self, classobject):
         self.loggername = '.'.join([classobject.__class__.__name__])
         return logging.getLogger(self.loggername)
         
+    def GetTypeList (self):
+        return    self.objecttype 
                
     def SetInfo(self, classobject, functionname, message):
         '''
@@ -66,7 +70,24 @@ class OpensslTracking(object):
 
     def AddToCache(self, objecttocache):   
             self.cache.append(objecttocache)
-
+            
+    def GetFromCache (self, intype):
+        """
+        try to find in the cache an object with requested type
+        """
+        found = None
+        try:
+            for fname in self.objecttype:
+                if fname.startswith(intype):
+                    #requested name if known
+                    for fobject in self.cache:
+                        if fobject.type.startswith(intype):
+                            raise FoundOne("object found in cache" + intype)
+        except FoundOne:
+            found= fobject
+        finally:
+            return found            
+    """
     def GetFromCache (self, objectname):
         found = None
         try:
@@ -80,6 +101,7 @@ class OpensslTracking(object):
             found= fobject
         finally:
             return found
+     """       
     #def GetSession(self):
 
         

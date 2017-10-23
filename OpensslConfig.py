@@ -23,6 +23,7 @@ class OpensslConfig():
     password                            = "pipobimbo"
     # certificate signing request file extension
     signingrequestextension             = "_CRT.crt"
+    certificateextension                = "Certificate.pem"
     rootcertificateextension            = "_RootCertificate.pem"
     intermediatecertificateextension    = "_IntermediateCertificate.pem"
     devicecertificateextension          = "_DeviceCertificate.pem"
@@ -31,8 +32,8 @@ class OpensslConfig():
     pemextension                        = ".pem"
     rootobjectname                      = "root"
     intermediateobjectname              = "intermediate"
-    deviceobjectname                    = "devcie"
-    
+    deviceobjectname                    = "device"
+    rsakeyshortname                     = "RSAKey"
     stringtrailingpadding               = 30      
     defaulthash                         = "sha256"
     defaultrsalength                    = "2048"

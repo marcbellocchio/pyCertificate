@@ -2,17 +2,22 @@
 Created on 5 sept. 2017
 
 @author: bellocch
+code developped and tested using python 3.5
+six module has been installed
+https://pypi.python.org/pypi/six#downloads
+
+
 '''
 import cmd
 import sys
 # from GenRoot import GenRoot
-from GenRoot import  GenRoot
-from GenIntermediate import  GenIntermediate
 from OpensslTracking import OpensslTracking
 
+from CertificateRoot import CertificateRoot
+from CertificateIntermediate import CertificateIntermediate
 
 class OpenSSLCommandparser(cmd.Cmd):
-    """OpenSSL from Python Please start from here"""
+    """OpenSSL from Python Please start from here when using inheritance """
     
     prompt = 'Main>>: '
 
@@ -31,11 +36,12 @@ class OpenSSLCommandparser(cmd.Cmd):
         
     def do_Root (self, line):
         """ access to ROOT certificates"""
-        GenRoot(self.stdin, self.tracking).do_cmdloop()
+        CertificateRoot(self.stdin, self.tracking).do_cmdloop()
         
     def do_Intermediate (self, line):
         """ access to INTERMEDIATE certificates"""
-        GenIntermediate(self.stdin, self.tracking).do_cmdloop()
+        #GenIntermediate(self.stdin, self.tracking).do_cmdloop()
+        CertificateIntermediate(self.stdin, self.tracking).do_cmdloop()
     
     def do_Device (self, line):
         """ access to DEVICE certificates"""
