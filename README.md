@@ -71,7 +71,7 @@ remane accordingly the .whl donwload for your platform
 
 make an executable file
 <python> -m pip install pyinstaller
- pyinstaller <main class file>
+pyinstaller <main class file>
 
 Linux
 -----
