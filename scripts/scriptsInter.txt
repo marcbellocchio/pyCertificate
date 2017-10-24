@@ -1,0 +1,11 @@
+SetSessionName myIntermediateTest
+Intermediate
+GenRSAkey
+RSAkeyinClear
+SelectHash sha256
+GenCSR
+SelectRSAkeyFromIssuerCertificate K:\Certificates\python\RootRSAKey_MainRoot_2017_10_23_18_31_44.pem_RootCertificate.pem
+SelectIssuerPassword mypassword
+GenCertificate
+exit
+exit

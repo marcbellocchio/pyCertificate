@@ -1,0 +1,9 @@
+SetSessionName MainRoot
+Root
+GenRSAkey
+RSAkeyinClear
+SelectHash sha256
+GenCSR
+GenCertificate
+exit
+exit

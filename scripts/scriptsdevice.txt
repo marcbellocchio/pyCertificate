@@ -1,0 +1,11 @@
+SetSessionName myDeviceTest
+Device
+GenRSAkey
+RSAkeyinClear
+SelectHash sha256
+GenCSR
+SelectRSAkeyFromIssuerCertificate K:\Certificates\python\IntermediateRSAKey_myIntermediateTest_2017_10_23_18_38_47.pem_IntermediateCertificate.pem
+SelectIssuerPassword mypassword
+GenCertificate
+exit
+exit
