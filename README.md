@@ -24,7 +24,7 @@ prerequisites:
 --------------
 install openssl on the PC
 install python on the pc (python >=3.5)
-intall the python file
+intall the python files from the 
 
 configuration files
 -------------------
