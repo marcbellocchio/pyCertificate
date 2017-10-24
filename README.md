@@ -56,7 +56,6 @@ manual:
 automatic:
 <path to python programm> <path to the main class file>\OpensslInherit.py <script file>
 
-
 Windows
 --------
 executable created with cx_Freeze 5.0.2
