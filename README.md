@@ -52,7 +52,8 @@ Samples commands
 ----------------
 
 manual:
+<path to python programm> <path to the main class file>\OpensslInherit.py
 
 automatic:
-
+<path to python programm> <path to the main class file>\OpensslInherit.py <script file>
 
