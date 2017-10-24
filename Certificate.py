@@ -235,7 +235,7 @@ class CertiticateOrigin(object):
                 call(cmd, shell=False)
             else: # not a root type, so specific cmd line is required to sign the certificate
                 call( self.GenerateCommandforIntermediateorDevice(line), shell=False)
-            self.tracking.SetInfo(self, sys._getframe().f_code.co_name, self.certificatename)
+            self.tracking.SetInfo(self, sys._getframe().f_code.co_name, self.GetCertificate())
             self.CertificateToText()
         else:
             self.tracking.SetError(self, sys._getframe().f_code.co_name, "RSA key and certificate signing request  shall be generated or select before creating the certificate")            

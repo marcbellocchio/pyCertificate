@@ -10,11 +10,13 @@ https://pypi.python.org/pypi/six#downloads
 '''
 import cmd
 import sys
+
 # from GenRoot import GenRoot
 from OpensslTracking import OpensslTracking
 
 from CertificateRoot import CertificateRoot
 from CertificateIntermediate import CertificateIntermediate
+from CertificateDevice import CertificateDevice
 
 class OpenSSLCommandparser(cmd.Cmd):
     """OpenSSL from Python Please start from here when using inheritance """
@@ -29,6 +31,7 @@ class OpenSSLCommandparser(cmd.Cmd):
             self.use_rawinput = False
         # tracking object used by all classes, the cache is global for all     
         self.tracking           = OpensslTracking()
+
 
     def do_SetSessionName (self, line):
         """ give a name to the session and append it to all the output rsa and certificate file name"""
@@ -45,7 +48,8 @@ class OpenSSLCommandparser(cmd.Cmd):
     
     def do_Device (self, line):
         """ access to DEVICE certificates"""
-    
+        CertificateDevice(self.stdin, self.tracking).do_cmdloop()
+        
     def do_exit(self,*args):
         """ to exit from main program"""
         return True
