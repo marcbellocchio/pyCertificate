@@ -71,8 +71,10 @@ remane accordingly the .whl donwload for your platform
 make an executable file
 <python> -m pip install pyinstaller
   
-then to generate the .exe file do :
+then to generate the .exe with dependencies as dll file do :
 pyinstaller "main class file"
+for all in one file 
+pyinstaller -F -w "main class file"
 
 Linux
 -----
