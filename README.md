@@ -50,10 +50,17 @@ script_device.txt
 
 Samples commands
 ----------------
-
 manual:
 <path to python programm> <path to the main class file>\OpensslInherit.py
 
 automatic:
 <path to python programm> <path to the main class file>\OpensslInherit.py <script file>
 
+
+Windows
+--------
+executable created with cx_Freeze 5.0.2
+
+Linux
+-----
+not tested
