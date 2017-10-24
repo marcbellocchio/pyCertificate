@@ -60,6 +60,15 @@ automatic:
 Windows
 --------
 executable created with cx_Freeze 5.0.2
+issue solved when installing a .whl package (error message not wupported .whl file)
+add to a python file
+inport pip
+print(pip.pep425tags.get_supported())
+check for a list like this:
+[('cp35', 'cp35m', 'win32'), ('cp35', 'none', 'win32'), ('py3', 'none', 'win32'), ('cp35', 'none', 'any'), ('cp3', 'none', 'any'), ('py35', 'none', 'any'), ('py3', 'none', 'any'), ('py34', 'none', 'any'), ('py33', 'none', 'any'), ('py32', 'none', 'any'), ('py31', 'none', 'any'), ('py30', 'none', 'any')]
+
+remane accordingly the .whl donwload for your platform
+
 
 Linux
 -----
