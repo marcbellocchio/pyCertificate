@@ -1,0 +1,17 @@
+SetSessionName 3Chain
+Root
+GenRSAkey
+GenCSR
+GenCertificate
+exit
+Intermediate
+GenRSAkey
+GenCSR
+GenCertificate
+exit
+Device
+GenRSAkey
+GenCSR
+GenCertificate
+exit
+exit
