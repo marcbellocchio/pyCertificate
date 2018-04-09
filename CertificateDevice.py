@@ -60,6 +60,12 @@ class CertificateDevice(cmd.Cmd, CertiticateOrigin):
         """type shall be part of the typelist"""
         self.type = intype               
         
+    def do_SelectConfigFile(self, line):
+        """
+        select a config file on disk to overwrite the default one, (selected in the constructor)
+        """
+        self.SetConfigFile(line)
+        
     def do_GenCSR(self, line):   
         """
         generate CSR calling mother class method 
