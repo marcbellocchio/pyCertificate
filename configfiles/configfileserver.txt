@@ -1,0 +1,55 @@
+ [ req ]
+ default_bits           = 2048
+ default_keyfile        = privkey.pem
+ distinguished_name     = req_distinguished_name
+ attributes             = req_attributes
+ prompt									= no
+ default_md             = sha256
+ dirstring_type 				= nobmp
+ x509_extensions        = v3_req
+ #req_extensions				  = v3_req
+
+ [ req_distinguished_name ]
+ # no default value shall be used with no prompt otherwise errors will occur
+ 
+ # C=
+ countryName                    = FR
+ 
+ # ST=
+ stateOrProvinceName 			= BDR 
+
+ # L=
+ localityName                   = LaCiotat
+ 
+ # O=
+ 0.organizationName             = SMARDTV SNC
+ 
+ # OU= 
+ 0.organizationalUnitName       = SMARTHING server
+ 1.organizationalUnitName       = SmarDTV signed by intermediate 
+
+ # CN= 
+ commonName                      = *.smarthing-cloud.com
+
+
+
+ [ req_attributes ]
+
+[ v3_req ]
+basicConstraints			= CA:FALSE
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer:always
+keyUsage  = digitalSignature, nonRepudiation, keyEncipherment
+subjectAltName=dirName:dir_sect
+
+[dir_sect]
+DNS.1 = *.smarthing-cloud.com
+DNS.2 = smarthing-cloud.com
+DNS.3 = deploy.smarthing-cloud.com
+DNS.4 = integration.smarthing-cloud.com
+
+
+
+
+
+

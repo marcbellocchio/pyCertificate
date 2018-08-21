@@ -1,0 +1,41 @@
+ [ req ]
+ default_bits           = 2048
+ default_keyfile        = privkey.pem
+ distinguished_name     = req_distinguished_name
+ attributes             = req_attributes
+ prompt									= no
+ default_md             = sha256
+ dirstring_type 				= nobmp
+ x509_extensions        = v3_req
+ #req_extensions				  = v3_req
+
+ [ req_distinguished_name ]
+ # no default value shall be used with no prompt otherwise errors will occur
+ 
+ # C=
+ countryName                    = FR
+ 
+ # ST=
+ stateOrProvinceName 						= BDR 
+
+ # L=
+ localityName                   = LaCiotat
+ 
+ # O=
+ 0.organizationName             = SMARDTV INTERMEDIATE
+ 
+ # OU= 
+ 0.organizationalUnitName         = SMARTHING
+ 1.organizationalUnitName         = SmarDTV signed by ROT 
+
+ # CN= 
+ commonName                      = INTERMEDIATE CA 
+
+
+ [ req_attributes ]
+
+[ v3_req ]
+basicConstraints			= CA:TRUE
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+keyUsage  = keyCertSign, cRLSign
