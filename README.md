@@ -24,7 +24,9 @@ prerequisites:
 --------------
 install openssl on the PC
 install python on the pc (python >=3.5)
-intall the python files from the 
+install the python files of the tools
+edit the configuration files of openssl, provided as examples, with your own data
+edit the OpensslConfig.py to point to your own directories
 
 configuration files
 -------------------
